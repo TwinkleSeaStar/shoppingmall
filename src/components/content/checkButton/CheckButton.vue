@@ -1,0 +1,34 @@
+<template>
+  <div class="check-button" :class="{check: isChecked}">
+    <img src="~assets/img/cart/tick.svg" alt="">
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'CheckButton',
+    props: {
+      isChecked: {
+        type: Boolean,
+        default: false
+      }
+    }
+  }
+</script>
+
+<style scoped>
+  .check-button {
+    border-radius: 50%;
+    border: 2px solid #aaa;
+    font-size: 0;     /* 消除inline-block的间隙 */
+  }
+
+  .check {
+    border-color: var(--color-tint);
+    background-color: var(--color-tint);
+  }
+
+  /* img {               
+    display: block;           
+  } */
+</style>
