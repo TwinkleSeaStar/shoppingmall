@@ -12,6 +12,8 @@
 <script>
   import CheckButton from 'components/content/checkButton/CheckButton'
 
+  import {useToast} from 'components/common/toast/useToast'
+
   import {mapGetters} from 'vuex'
 
   export default {
@@ -58,8 +60,13 @@
         }
       },
       calcClick() {
-        if(!this.checkedLength == 0) {
-          this.$toast.show('请选择购买的商品', 2000)
+        if(this.checkedLength == 0) {
+          // vue2.x 调用toast
+          // this.$toast.show('请选择购买的商品', 2000)
+
+          // vue3.x 调用toast
+          const Toast = useToast();
+          Toast('请选择购买的商品',1000);
         }
       }
     }

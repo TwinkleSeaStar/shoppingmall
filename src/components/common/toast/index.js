@@ -10,6 +10,7 @@ obj.install = function(Vue) {
   // 方法一：无法实现，Toast.$el为undifined，还没挂载
   // console.log(Toast.$el)
   // document.body.appendChild(Toast.$el)
+  // Vue.prototype.$toast = Toast;
 
   // 方法二：使用组件构造器
   // 1.创建组件构造器

@@ -17,9 +17,8 @@ const toastVM = createApp({
           class: ["lx-toast"],
           style: {
             display: state.show ? "block" : "none",
-            background: "#000",
+            backgroundColor: "rgba(0, 0, 0, .75)",
             color: "#fff",
-            width: "100px",
             position: "fixed",
             top: "50%",
             left: "50%",
@@ -39,13 +38,14 @@ document.body.appendChild(toastWrapper);
 toastVM.mount("#lx-toast");
 
 export function useToast() {
-  return function Toast(msg) {
-    console.log(msg);
+  return function Toast(msg = '默认文字', duration = 2000) {
+    // console.log(msg);
     // 拿到传来的数据
     state.show = true;
     state.text = msg;
     setTimeout(() => {
       state.show = false;
-    }, 1000);
+      state.message = '';
+    }, duration);
   };
 }

@@ -24,7 +24,9 @@
       }
     },
     methods: {
-      show(message='默认文字', duration=2000) {
+      show(message='默认文字', duration=2000) {   // es6写法
+        // duration = duration || 2000;           // es5写法：为参数设置默认值
+        // console.log(message, duration);
         this.isShow = true;
         this.message = message;
 

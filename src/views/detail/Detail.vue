@@ -50,7 +50,7 @@
   import emitter from '../../mitt/bus'
   import {debounce} from 'common/utils';
   import {itemListenerMixin, backTopMixin} from 'common/mixin'
-  // import {useToast} from 'components/common/toast/useToast'
+  import {useToast} from 'components/common/toast/useToast'
 
   import {mapActions} from 'vuex'
 
@@ -241,7 +241,7 @@
         this.addCart(product).then(res => {
           // console.log(res);
 
-          // 普通方式封装toast
+          // 1.普通方式封装toast
           // this.show = true;
           // this.message = res;
           // setTimeout(() => {
@@ -249,7 +249,13 @@
           //   this.message = ''
           // }, 1500)
 
+          // 2.插件方式封装toast
+          // vue2.x 调用toast
           // this.$toast.show(res, 2000)
+
+          // vue3.x 调用toast
+          const Toast = useToast();
+          Toast(res, 2000);
 
         })
       }

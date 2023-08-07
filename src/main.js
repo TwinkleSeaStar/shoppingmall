@@ -4,7 +4,7 @@ import router from './router'              // 导入router
 import store from './store'
 
 import FastClick from 'fastclick'
-import VueLazyLoad from 'vue-lazyload-next'
+import VueLazyLoad from 'vue-lazyload-next' 
 
 // 在Vue2.x中可以通过事件总线EventBus的方法来实现组件通信。
 // 在Vue3.x中移除了on,off等方法,而是推荐使用mitt代替。
@@ -17,7 +17,7 @@ import VueLazyLoad from 'vue-lazyload-next'
 // 1.导入index.js文件
 // import toast from 'components/common/toast'
 // 2.安装toast插件
-// Vue.use(toast)   // 只要调用这行代码，会执行obj.install函数(src/components/common/toast/index.js)
+// Vue.use(toast)   // 只要调用Vue.use(obj)，就会执行obj.install函数(src/components/common/toast/index.js)
 
 
 
